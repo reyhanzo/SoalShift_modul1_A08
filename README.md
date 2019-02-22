@@ -1,7 +1,8 @@
 # SoalShift_modul1_A08
 hasil pengerjaan soal shift modul 1 A08
 
-1.
+## Soal 1
+
 ```
 #!/bin/bash
 a=1
@@ -30,17 +31,20 @@ e. agar file bisa berurutan, diberi variable a (dari 1) sebagai nama file agar u
 f. setelah melakukan proses ini, file tersebut akan berubah menjadi  kumpulan foto (file asli tersebut)
 
 g. tambahkan cron sesuai konteks soal.
+
 ```
 14 14 14 2 * /bin/bash ~/script1.sh
 * * * 2 5 /bin/bash ~/script1.sh
 ```
 
-2.
+## Soal 2
+
 ```
 #(a)
 echo "2a)"
 awk -F ',' '{if($7 -eq '2012') a[$1]+=$10} END {for(x in a) print a[x] , x}' WA_Sales_Products_2012-14.csv | sort -nr | head -1 | awk '{print $2,$3}'
 ```
+
 Penjelasan :
 awk -F, untuk mencari data pada file.
 
@@ -88,7 +92,8 @@ Mengurutkan dari terbesar ke terkecil dan mengambil 3 baris pertama yaitu baris 
 
 Karena yang diinginkan hanya nama product line, digunakan perintah awk '{print $2,$3}'.
 
-3.
+## Soal 3
+
 ```
 #!/bin/bash
 
@@ -104,13 +109,96 @@ done
 PASS=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 12 | head -n 1)
 echo "$PASS" >> "$name$suffix.txt"
 ```
+
 a. pada awalnya, nama file harus bertuliskan “password” yang berisi kumpulan char secara random dan tidak boleh sama dengan file password yg lain. Yang pertama, membuat file berurutan yang berisi kumpulan char dalam satu kata (dengan while) dengan konteks password1.txt, password2.txt, …., dst.
 
 b. untuk membuat kumpulan char tersebut random, maka dideklarasikan “PASS” agar bisa menyusun kumpulan char (a-z, A-Z, 0-9) secara random. Dan dibuat sesuai konteks soal (panjang sebanyak 12 char).
 
 c. setelah program dibuat, di bash sebanyak lebih dari 2x, agar bisa melihat perbedaan terhadap kumpulan char yg dibuat (seperti gambar di bawah). 
 
-5.
+## Soal 4
+
+```
+#!/bin/bash
+
+jam=`date "+%H"`
+namafile=`date "+%H:%M %d-%m-%Y"`
+
+hurufkecil=(a b c d e f g h i j k l m n o p q r s t u v w x y z)
+hurufbesar=(A B C D E F G H I J K L M N O P Q R S T U V W X Y Z)
+
+kecil=${hurufkecil[$hour]}
+besar=${hurufbesar[$hour]}
+
+cat /var/log/syslog | tr '[a-z]' "[$kecil-za-$kecil]" | tr '[A-Z]' "[$besar-ZA-$besar]" > /home/lutfiy/nomor4/"$namafile".txt
+```
+
+Membuat 2 buah array yang berisi huruf kecil dan huruf kapital.
+
+Selanjutnya, karena proses enkripsi bergantung sesuai jam, maka digunakan sebuah variable untuk menyimpan nilai jam. 
+
+Untuk format filename yaitu HH:MM dd-mm-yyyy makan dibuat sebuah variable filename yang berisi format tersebut.
+
+Membuat variabel yg digunakan untuk menyimpan huruf dengan indeks ke-$hour.
+cat /var/log/syslog akan menampilkan isi syslog yang kemudian membuat pergeseran huruf kekanan. Namun jika sampai Z akan kembali lagi ke A.
+
+Kemudian, file backup syslog yang ter-enkripsi tersebut akan disimpan di direktori diatas.
+
+```
+#!/bin/bash
+
+hurufkecil=(a b c d e f g h i j k l m n o p q r s t u v w x y z)
+hurufbesar=(A B C D E F G H I J K L M N O P Q R S T U V W X Y Z)
+
+for file in /home/lutfiy/nomor4/*.txt
+do
+jam=${file:38:2}
+let reverse=$jam*-1
+namafile=${file:38:16}
+kecil=${hurufkecil[$reverse]}
+besar=${hurufbesar[$reverse]}
+
+cat "$file" | tr '[a-z]' "[$kecil-za-$kecil]" | tr '[A-Z]' "[$besar-ZA-$besar]" >> /home/lutfiy/nomor4/dekrip/"$namafile".txt
+done
+```
+
+```
+#!/bin/bash
+
+hurufkecil=(a b c d e f g h i j k l m n o p q r s t u v w x y z)
+hurufbesar=(A B C D E F G H I J K L M N O P Q R S T U V W X Y Z)
+
+for file in /home/lutfiy/nomor4/*.txt
+do
+jam=${file:38:2}
+let reverse=$jam*-1
+namafile=${file:38:16}
+kecil=${hurufkecil[$reverse]}
+besar=${hurufbesar[$reverse]}
+
+cat "$file" | tr '[a-z]' "[$kecil-za-$kecil]" | tr '[A-Z]' "[$besar-ZA-$besar]" >> /home/lutfiy/nomor4/dekrip/"$namafile".txt
+done
+```
+
+Penjelasan:
+Mirip dengan enkrip. Namun digunakan for loop untuk semua file .txt pada folder tempat menyimpan file enkrip.
+
+Karena ingin mendecrypt, maka perlu diketahui jam file yang terencrypt dibuat. 
+
+Menggeser setiap huruf kekanan.
+
+Selanjutnya untuk nama file yang akan tersimpan sebagai hasil decrypt akan memiliki nama yang sama.
+
+File tersebut akan tersimpan di direktori diatas.
+
+Gunakan crontab untuk backup file syslog perjam
+
+```
+0 * * * * /bin/bash /home/lutfiy/soal4.sh
+```
+
+## Soal 5
+
 ```
 SCRIPT
 awk '/cron/ || /CRON/,!/sudo/' /var/log/syslog | awk 'NF <= 12 {print}' >> /home/lutfiy/modul1/syslog5.log
@@ -121,13 +209,10 @@ awk '/cron/ || /CRON/,!/sudo/' /var/log/syslog | awk 'NF <= 12 {print}' >> /home
    b. Perintah “NF<=12” untuk menampilkan jumlah field pada baris yang berjumlah kurang dari 13 teratas.
     
    c. Perintah “>> /home/andhika/modul1/no_5_sisop.log” untuk memasukkan record tadi ke dalam file logs pada direktori.
-    
+      
+   d. Membuat crontab jalankan dengan mengetikkan crontab -l
     
 ```
 nomor 5
 2-30/6 * * * * /bin/bash/home/lutfiy/soal5.sh
 ```
-
-   d. Membuat crontab jalankan dengan mengetikkan crontab -l
-    
-
