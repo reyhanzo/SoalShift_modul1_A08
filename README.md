@@ -1,5 +1,5 @@
 # SoalShift_modul1_A08
-hasil pengerjaan soal shift modul 1 A08
+Hasil pengerjaan soal shift modul 1 A08
 
 ## Soal 1
 
