@@ -17,6 +17,7 @@ base64 -d $file | xxd -r > "images/"$a"_pic.jpg"
 a=$((a+1))
 done
 ```
+
 a. pindah direktori di Downloads
 
 b. lalu unzip file yg didownload dari drive (nature.zip) dan akan muncul di file Downloads 
@@ -33,8 +34,8 @@ f. setelah melakukan proses ini, file tersebut akan berubah menjadi  kumpulan fo
 g. tambahkan cron sesuai konteks soal.
 
 ```
-14 14 14 2 * /bin/bash ~/script1.sh
-* * * 2 5 /bin/bash ~/script1.sh
+14 14 14 2 * /bin/bash ~/soal1.sh
+* * * 2 5 /bin/bash ~/soal1.sh
 ```
 
 ## Soal 2
