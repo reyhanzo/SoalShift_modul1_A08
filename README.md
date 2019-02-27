@@ -191,7 +191,7 @@ awk '/cron/ || /CRON/,!/sudo/' /var/log/syslog | awk 'NF <= 12 {print}' >> /home
    
    b. Perintah “NF<=12” untuk menampilkan jumlah field pada baris yang berjumlah kurang dari 13 teratas.
     
-   c. Perintah “>> /home/andhika/modul1/no_5_sisop.log” untuk memasukkan record tadi ke dalam file logs pada direktori.
+   c. Perintah “>> /home/lutfiy/modul1/no_5_sisop.log” untuk memasukkan record tadi ke dalam file logs pada direktori.
       
    d. Membuat crontab jalankan dengan mengetikkan crontab -l
     
