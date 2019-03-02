@@ -45,6 +45,7 @@ g. tambahkan cron sesuai konteks soal.
 echo "2a)"
 awk -F ',' '{if($7 -eq '2012') a[$1]+=$10} END {for(x in a) print a[x] , x}' WA_Sales_Products_2012-14.csv | sort -nr | head -1 | awk '{print $2,$3}'
 ```
+![2a](2. code.png)
 
 Penjelasan :
 awk -F, untuk mencari data pada file.
