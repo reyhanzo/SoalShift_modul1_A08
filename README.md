@@ -44,7 +44,7 @@ code :
 ![1l](https://github.com/reyhanzo/SoalShift_modul1_A08/blob/master/1.code.png)
 
 
-unfile :
+unzip :
 
 ![1](https://github.com/reyhanzo/SoalShift_modul1_A08/blob/master/1.%20nature.png)
 
