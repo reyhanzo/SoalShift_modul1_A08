@@ -243,3 +243,21 @@ awk '/cron/ || /CRON/,!/sudo/' /var/log/syslog | awk 'NF <= 12 {print}' >> /home
 nomor 5
 2-30/6 * * * * /bin/bash/home/lutfiy/soal5.sh
 ```
+code :
+
+![GitHub Logo](https://github.com/reyhanzo/SoalShift_modul1_A08/blob/master/5.%20code.png)
+
+
+file backup :
+
+![GitHub Logo](https://github.com/reyhanzo/SoalShift_modul1_A08/blob/master/5.hasil.png)
+
+
+isi file dimana field <13 :
+
+![GitHub Logo](https://github.com/reyhanzo/SoalShift_modul1_A08/blob/master/5.%20syslog5.png)
+
+
+crontab :
+
+![GitHub Logo](https://github.com/reyhanzo/SoalShift_modul1_A08/blob/master/5.%20crontab.png)
