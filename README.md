@@ -59,7 +59,6 @@ Mengambil baris pertama yaitu baris dengan negara yang memiliki quantity terbany
 
 Karena yang diinginkan adalah nama negaranya saja maka digunakan awk  '{print $2,$3}' pada bagian akhir. Output yang dihasilkan berdasarkan script diatas yaitu “United States”.
 
-![2a hasil](https://github.com/reyhanzo/SoalShift_modul1_A08/blob/master/2.%20hasil.png)
 
 ```
 echo "2b)"
@@ -150,6 +149,18 @@ Membuat variabel yg digunakan untuk menyimpan huruf dengan indeks ke-$hour.
 cat /var/log/syslog akan menampilkan isi syslog yang kemudian membuat pergeseran huruf kekanan. Namun jika sampai Z akan kembali lagi ke A.
 
 Kemudian, file backup syslog yang ter-enkripsi tersebut akan disimpan di direktori diatas.
+
+code: 
+![GitHub Logo](https://github.com/reyhanzo/SoalShift_modul1_A08/blob/master/4.%20code.png)
+
+nama file :
+![GitHub Logo](https://github.com/reyhanzo/SoalShift_modul1_A08/blob/master/4.%20hasil.png)
+
+isi file yang terenkripsi :
+![GitHub Logo](https://github.com/reyhanzo/SoalShift_modul1_A08/blob/master/4.%20hasilenkrip.png)
+
+crotab setiap jam :
+![GitHub Logo](https://github.com/reyhanzo/SoalShift_modul1_A08/blob/master/4.%20crontab.png)
 
 ```
 #!/bin/bash
