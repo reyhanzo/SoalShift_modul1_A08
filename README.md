@@ -94,7 +94,12 @@ Mengurutkan dari terbesar ke terkecil dan mengambil 3 baris pertama yaitu baris 
 
 Karena yang diinginkan hanya nama product line, digunakan perintah awk '{print $2,$3}'.
 
+code :
+
 ![2a](https://github.com/reyhanzo/SoalShift_modul1_A08/blob/master/2.%20code.png)
+
+
+hasil :
 
 ![2a hasil](https://github.com/reyhanzo/SoalShift_modul1_A08/blob/master/2.%20hasil.png)
 
@@ -150,16 +155,30 @@ cat /var/log/syslog akan menampilkan isi syslog yang kemudian membuat pergeseran
 
 Kemudian, file backup syslog yang ter-enkripsi tersebut akan disimpan di direktori diatas.
 
+
+Gunakan crontab untuk backup file syslog perjam
+
+```
+0 * * * * /bin/bash /home/lutfiy/soal4.sh
+```
+
 code: 
+
 ![GitHub Logo](https://github.com/reyhanzo/SoalShift_modul1_A08/blob/master/4.%20code.png)
 
+
 nama file :
+
 ![GitHub Logo](https://github.com/reyhanzo/SoalShift_modul1_A08/blob/master/4.%20hasil.png)
 
+
 isi file yang terenkripsi :
+
 ![GitHub Logo](https://github.com/reyhanzo/SoalShift_modul1_A08/blob/master/4.%20hasilenkrip.png)
 
+
 crotab setiap jam :
+
 ![GitHub Logo](https://github.com/reyhanzo/SoalShift_modul1_A08/blob/master/4.%20crontab.png)
 
 ```
@@ -191,11 +210,19 @@ Selanjutnya untuk nama file yang akan tersimpan sebagai hasil decrypt akan memil
 
 File tersebut akan tersimpan di direktori diatas.
 
-Gunakan crontab untuk backup file syslog perjam
+code :
 
-```
-0 * * * * /bin/bash /home/lutfiy/soal4.sh
-```
+![GitHub Logo](https://github.com/reyhanzo/SoalShift_modul1_A08/blob/master/4.%20dekrip.png)
+
+
+file dekrip :
+
+![GitHub Logo](https://github.com/reyhanzo/SoalShift_modul1_A08/blob/master/4.%20filedekrip.png)
+
+
+isi file dekrip :
+
+![GitHub Logo](https://github.com/reyhanzo/SoalShift_modul1_A08/blob/master/4.%20hasildekrip.png)
 
 ## Soal 5
 
