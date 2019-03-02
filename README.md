@@ -38,6 +38,28 @@ g. tambahkan cron sesuai konteks soal.
 * * * 2 5 /bin/bash ~/soal1.sh
 ```
 
+
+code :
+
+![1l](https://github.com/reyhanzo/SoalShift_modul1_A08/blob/master/1.code.png)
+
+
+unfile :
+
+![1](https://github.com/reyhanzo/SoalShift_modul1_A08/blob/master/1.%20nature.png)
+
+
+isi file nature (base64) :
+
+![1](https://github.com/reyhanzo/SoalShift_modul1_A08/blob/master/1.isi%20file%20nature.png)
+
+
+isi file nature (jpg) :
+
+![1](https://github.com/reyhanzo/SoalShift_modul1_A08/blob/master/1.%20isi%20file%20nature%20jpg.png)
+
+
+
 ## Soal 2
 
 ```
@@ -126,6 +148,16 @@ a. pada awalnya, nama file harus bertuliskan “password” yang berisi kumpulan
 b. untuk membuat kumpulan char tersebut random, maka dideklarasikan “PASS” agar bisa menyusun kumpulan char (a-z, A-Z, 0-9) secara random. Dan dibuat sesuai konteks soal (panjang sebanyak 12 char).
 
 c. setelah program dibuat, di bash sebanyak lebih dari 2x, agar bisa melihat perbedaan terhadap kumpulan char yg dibuat (seperti gambar di bawah). 
+
+code : 
+
+![GitHub Logo](https://github.com/reyhanzo/SoalShift_modul1_A08/blob/master/3.code.png)
+
+
+hasil generate password :
+
+![Github ](https://github.com/reyhanzo/SoalShift_modul1_A08/blob/master/3.%20hasil%20generate%20password.png)
+
 
 ## Soal 4
 
