@@ -59,6 +59,9 @@ isi file nature (jpg) :
 ![1](https://github.com/reyhanzo/SoalShift_modul1_A08/blob/master/1.%20isi%20file%20nature%20jpg.png)
 
 
+crontab :
+
+![1](https://github.com/reyhanzo/SoalShift_modul1_A08/blob/master/crontab.png)
 
 ## Soal 2
 
