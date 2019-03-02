@@ -45,7 +45,6 @@ g. tambahkan cron sesuai konteks soal.
 echo "2a)"
 awk -F ',' '{if($7 -eq '2012') a[$1]+=$10} END {for(x in a) print a[x] , x}' WA_Sales_Products_2012-14.csv | sort -nr | head -1 | awk '{print $2,$3}'
 ```
-![2a](https://github.com/reyhanzo/SoalShift_modul1_A08/blob/master/2.%20code.png)
 
 Penjelasan :
 awk -F, untuk mencari data pada file.
@@ -59,6 +58,8 @@ Mengurutkan numeric reverse yaitu dari quantity yang terbesar ke terkecil.
 Mengambil baris pertama yaitu baris dengan negara yang memiliki quantity terbanyak. Dari hasil sebelumnya, tercetak dengan format Quantity,Nama_Negara (nama_negara dipisahkan spasi jadi masuk field selanjutnya).
 
 Karena yang diinginkan adalah nama negaranya saja maka digunakan awk  '{print $2,$3}' pada bagian akhir. Output yang dihasilkan berdasarkan script diatas yaitu “United States”.
+
+![2a hasil](https://github.com/reyhanzo/SoalShift_modul1_A08/blob/master/2.%20hasil.png)
 
 ```
 echo "2b)"
@@ -93,6 +94,10 @@ Menyimpan quantity dari product line pada array. Mencetak Quantity dan Product_L
 Mengurutkan dari terbesar ke terkecil dan mengambil 3 baris pertama yaitu baris yang memiliki quantity terbanyak dan product line-nya.
 
 Karena yang diinginkan hanya nama product line, digunakan perintah awk '{print $2,$3}'.
+
+![2a](https://github.com/reyhanzo/SoalShift_modul1_A08/blob/master/2.%20code.png)
+
+![2a hasil](https://github.com/reyhanzo/SoalShift_modul1_A08/blob/master/2.%20hasil.png)
 
 ## Soal 3
 
